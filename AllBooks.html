@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <title>Books</title>
+</head>
+
+<body>
+  <!-- Header section starts -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand ms-lg-5 ps-lg-5 ms-md-4 ps-md-4" href="index.html">
+        <img src="image/logo.png" alt="Logo" width="160" height="50" class="d-inline-block align-text-top">
+
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navBar">
+        <ul class="navbar-nav me-lg-5 pe-lg-5 mb-2 mb-lg-0">
+          <li class="nav-item ">
+            <a class="all_books nav-link" href="AllBooks.html">All Books</a>
+          </li>
+          <li class="nav-item dropdown me-1 mb-lg-0 mb-2">
+            <select id="input-category" class="form-select  nav-link  ms-4  ps-2" aria-label="Categories"
+              style="border: 3px solid #006A2D;">
+              <option value="all">All categories</option>
+              <option value="Technology">Technology</option>
+              <option value="Psychology">Psychology</option>
+              <option value="Philosophy">Philosophy</option>
+              <option value="Business/Economic">Business/Economic</option>
+              <option value="Religion">Religion</option>
+              <option value="Business&Management">Business & Management</option>
+              <option value="Science">Science</option>
+              <option value="Guide">Guide</option>
+            </select>
+          </li>
+          <form class="search d-flex">
+            <input id="text-input-search" class="form-control me-2 ms-4" type="search" placeholder="Search"
+              aria-label="Search" style="border: 3px solid #006A2D;">
+            <button onclick="onSearchBook(event)" class="fa fa-search"></button>
+          </form>
+          <li class="nav-item dropdown ms-lg-5">
+            <a class="nav-link" id="AccountDropDown" style="color: #006A2D;">
+              My Account
+            </a>
+            <ul class="dropdown-content" aria-labelledby="AccountDropDown">
+              <li class="btn-logout"><a class="dropdown-item" href="Reserved.html">Reserved</a></li>
+              <li class="btn-login">
+                <hr class="dropdown-divider">
+              </li>
+              <li class="btn-login"><a class="dropdown-item" href="Login.html">Login</a></li>
+              <li class="btn-logout">
+                <hr class="dropdown-divider">
+              </li>
+              <li onclick="onClickLogout()" class="btn-logout"><a class="log_out dropdown-item">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Header section ends -->
+
+
+  <!-- Content section starts -->
+  <div class="text_over_img">
+    <div class="container-fluid">
+      <img src="image/banner.png" alt="banner" style="width:100%;">
+      <div class="centered">
+        <h1>Book Results</h1>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="main_content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3 ps-5 ms-5 mt-5 pt-5">
+          <section id="categoryDropdown">
+            <h2 class="cartTitle mb-5">Category</h2>
+            <div class="mb-5">
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1"
+                    value="Technology" checked>
+                  <label class="form-check-label1" for="exampleRadios1">
+                    Technology
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2"
+                    value="Business/Economic" checked>
+                  <label class="form-check-label1" for="exampleRadios2">
+                    Business/Economic
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios3"
+                    value="Religion" checked>
+                  <label class="form-check-label1" for="exampleRadios3">
+                    Religion
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios4"
+                    value="Psychology" checked>
+                  <label class="form-check-label1" for="exampleRadios4">
+                    Psychology
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios5"
+                    value="Business&Management" checked>
+                  <label class="form-check-label1" for="exampleRadios5">
+                    Business & Management
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios6"
+                    value="Philosophy" checked>
+                  <label class="form-check-label1" for="exampleRadios6">
+                    Philosophy
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios7"
+                    value="Science" checked>
+                  <label class="form-check-label1" for="exampleRadios7">
+                    Science
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios8" value="Guide"
+                    checked>
+                  <label class="form-check-label1" for="exampleRadios8">
+                    Guide
+                  </label>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <section id="categoryDropdown">
+            <h2 class="cartTitle mb-5">Rating </h2>
+            <div class="mb-5">
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="exampleRadiosRate" id="exampleRadios11"
+                    value="1" checked>
+                  <label class="form-check-label1" for="exampleRadios11">
+                    <i class="fa fa-star rating-color"></i>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="exampleRadiosRate" id="exampleRadios12"
+                    value="2" checked>
+                  <label class="form-check-label1" for="exampleRadios12">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="exampleRadiosRate" id="exampleRadios13"
+                    value="3" checked>
+                  <label class="form-check-label1" for="exampleRadios13">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="exampleRadiosRate" id="exampleRadios14"
+                    value="4" checked>
+                  <label class="form-check-label1" for="exampleRadios14">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="exampleRadiosRate" id="exampleRadios15"
+                    value="5" checked>
+                  <label class="form-check-label1" for="exampleRadios15">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </label>
+                </div>
+              </div>
+              <div class="button mt-5">
+                <div class="button_layer"></div>
+                <button onclick="fillterBook()">Filter</button>
+              </div>
+
+            </div>
+          </section>
+
+
+
+
+        </div>
+        <div class="col-sm-7 mt-5 pt-5">
+          <h2 class="cartTitle mb-5">All Books</h2>
+          <div id="book-list" class="row row-cols-1 row-cols-md-3 row-cols-2 g-4">
+          </div>
+          <nav aria-label="Page navigation example">
+            <ul id="list-link-page" class="pagination justify-content-center pt-3 mt-5">
+            </ul>
+          </nav>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Content section ends -->
+
+  <!-- Footer starts -->
+  <footer class="text-center text-lg-start bg-light text-muted">
+    <div class="container-fluid text-center text-md-start mt-5">
+      <div class="row justify-content-center mt-3 pt-5">
+        <div class="col-1">
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h6 class="text-uppercase  mb-4">Opening hours: 9AM - 5PM</h6>
+          <h6 class="text-uppercase  mb-4">Hotline: 09102909310</h6>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h6><a href="AllBooks.html" class="footer_text text-uppercase fw-bold mb-4"
+              style="text-decoration: none; color:black">
+              All Books
+            </a></h6>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h6><a href="Reserved.html" class="footer_text text-uppercase fw-bold mb-4"
+              style="text-decoration: none; color:black">
+              All Reserved Book
+            </a></h6>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h6><a href="AboutUs.html" class="footer_text text-uppercase fw-bold mb-4"
+              style="text-decoration: none; color:black">
+              About Us
+            </a></h6>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h6><a href="FAQ.html" class="footer_text text-uppercase fw-bold mb-4"
+              style="text-decoration: none; color:black">
+              FAQ
+            </a></h6>
+        </div>
+        <div class="col-1">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="text-center p-4" style="background-color:black; color: white;">
+      © 2022 COCO University Bookstore. All right reserved
+      <br>
+    </div>
+  </footer>
+
+  <button type="button" class="btn btn-floating btn-lg" id="btn-back-to-top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+
+  <!-- Footer ends -->
+
+
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script src="js/JQuery.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+
+  <script src="js/common/load_data.js"></script>
+  <script src="js/common/utils.js"></script>
+  <script src="js/user/header.js"></script>
+  <script src="js/user/all_book.js"></script>
+
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Modal Section starts -->
+
+  <div class="modal fade" id="reserve_Form" tabindex="-1" aria-labelledby="reserveForm" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reserveForm">Reservation Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="BookTitle" class="col-form-label">Book Title</label>
+              <input disabled type="text" class="form-control" id="ReserveBookTitle">
+            </div>
+            <div class="mb-3">
+              <label for="ISBN" class="col-form-label">ISBN</label>
+              <input disabled disabledtype="number" class="form-control" id="ReserveISBN">
+            </div>
+            <div class="mb-3">
+              <label for="StudentID" class="col-form-label">Student ID</label>
+              <input disabled type="text" class="form-control" id="ReserveStudentID">
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#reserve_form1" data-bs-toggle="modal" data-bs-dismiss="modal"
+            style="background-color: #006A2D;">Check Avaibilty</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="reserve_form1" tabindex="-1" aria-labelledby="reserveForm" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <h2 class="modal-title text-center" id="reserveForm">Reservation Form</h2>
+          <button type="button" class="btn-close me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="onReserveNow(event)">
+            <p>Date Reserve</p>
+            <div class="mb-3" style="display: none;">
+              <label for="from-date" class="col-form-label">From</label>
+              <input name="id_book" type="text" class="form-control" id="idBookReserve">
+            </div>
+            <div class="mb-3">
+              <label for="from-date" class="col-form-label">From</label>
+              <input name="from" type="date" class="form-control" id="from-date">
+            </div>
+            <div class="mb-3">
+              <label for="to-date" class="col-form-label">To</label>
+              <input name="to" type="date" class="form-control" id="recipient-to-date">
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" data-bs-target="#alert_reserve" data-bs-toggle="modal"
+                data-bs-dismiss="modal" style="background-color: #006A2D;">Reserve Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="alert_reserve" tabindex="-1" aria-labelledby="alert_reserve" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reserveForm"></h5>
+          <button type="button" class="btn-close me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>You have Succesfully reserved the book</h2>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+            style="background-color: #006A2D;">Return Home</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="alert_reserve" tabindex="-1" aria-labelledby="alert_reserve" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reserveForm"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>Unfortunately you will have to wait</h2>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #006A2D;">Get
+            in queue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="alert_reserve" tabindex="-1" aria-labelledby="alert_reserve" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reserveForm"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>WE will send you a notice if your book is available</h2>
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="reloadPage()" class="btn btn-primary">Return
+            Home</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Modal Section Ends -->
+</body>
+
+</html>

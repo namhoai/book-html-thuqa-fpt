@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="css/Custom.css" />
+
+    <title>Librarian Dashboard</title>
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+
+        <div class="bg-dark" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
+                    class="fas fa-user-secret me-2"></i>BUV LIBRARY</div>
+            <div class="list-group list-group-flush my-3">
+                <a href="Librarian.html"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
+                        class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                <a href="SearchDisplay.html"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-project-diagram me-2"></i>Search Book</a>
+                <a href="StudentManagement.html"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-chart-line me-2"></i>Student Management</a>
+                <a href="BookManagement.html"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-chart-line me-2"></i>Book Management</a>
+                <a onclick="onClickLogout()" href="#"
+                    class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+                        class="fas fa-power-off me-2"></i>Logout</a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                    <h2 class="fs-2 m-0">Dashboard</h2>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <div class="SearchBar">
+                            <form class="search d-flex">
+                                <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                                    style="border: 1px solid #000000;">
+                                <button class="fa fa-search" type="submit"></button>
+                            </form>
+                        </div>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user me-2"></i>Me
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a onclick="onClickLogout()" class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container-fluid px-4">
+
+                <div class="row my-3">
+                    <div class="col">
+                        <table class="table bg-white rounded shadow-sm  table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col" width="50">#</th>
+                                    <th scope="col">StudentID</th>
+                                    <th scope="col">Student Email</th>
+                                    <th scope="col">Student status</th>
+                                    <th scope="col">Create At</th>
+                                </tr>
+                            </thead>
+                            <tbody id="user-info">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container-fluid px-4">
+
+                <div class="row my-3 mt-5">
+                    <h3 class="fs-4 mb-3">Student reserved books</h3>
+                    <div class="btnAdd">
+                        <div class="col">
+                            <table class="table bg-white rounded shadow-sm  table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" width="50">BookID</th>
+                                        <th scope="col">Book cover </th>
+                                        <th scope="col">Book Title</th>
+                                        <th scope="col">Reserved date</th>
+                                        <th scope="col">Return date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Johnny English: Rogue Nation</td>
+                                        <td>123456</td>
+                                        <td>3</td>
+                                        <td>Tom Cruise</td>
+                                        <td><button class="Edit bg-primary" type="submit"><a href="#!" data-id=""
+                                                    data-bs-toggle="modal" data-bs-target="#sendMessage_Form"
+                                                    class="btn btn-sm"><i class="fa fa-paper-plane"></i></a></button>
+                                        </td>
+                                        <td><button class="Delete bg-success" type="submit"><a href="#!" data-id=""
+                                                    data-bs-toggle="modal" data-bs-target="#return_Form"
+                                                    class="btn btn-sm"><i class="fa fa-undo"></i></a></button></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Laptop</td>
+                                        <td>Kenny</td>
+                                        <td>$750</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Cell Phone</td>
+                                        <td>Jenny</td>
+                                        <td>$600</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>Fridge</td>
+                                        <td>Killy</td>
+                                        <td>$300</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td>Books</td>
+                                        <td>Filly</td>
+                                        <td>$120</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">6</th>
+                                        <td>Gold</td>
+                                        <td>Bumbo</td>
+                                        <td>$1800</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">7</th>
+                                        <td>Pen</td>
+                                        <td>Bilbo</td>
+                                        <td>$75</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">8</th>
+                                        <td>Notebook</td>
+                                        <td>Frodo</td>
+                                        <td>$36</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">9</th>
+                                        <td>Dress</td>
+                                        <td>Kimo</td>
+                                        <td>$255</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">10</th>
+                                        <td>Paint</td>
+                                        <td>Zico</td>
+                                        <td>$434</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">11</th>
+                                        <td>Carpet</td>
+                                        <td>Jeco</td>
+                                        <td>$1236</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">12</th>
+                                        <td>Food</td>
+                                        <td>Haso</td>
+                                        <td>$422</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="return_Form" tabindex="-1" aria-labelledby="returnForm" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="returnForm">Confirmation for return book</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-1"></div>
+                            <button class="col-3 btn btn-primary" data-bs-dismiss="modal"
+                                style="background-color: gray;">Cancel</button>
+                            <div class="col-3"></div>
+                            <button class="col-3 btn btn-primary" style="background-color: 00A17B;">Confirm</button>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="sendMessage_Form" tabindex="-1" aria-labelledby="sendMessageForm" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sendMessageForm">Send message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <textarea id="sendMessage" name="sendMessage" rows="4" cols="60">
+                    </textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-1"></div>
+                            <button class="col-3 btn btn-primary" data-bs-dismiss="modal"
+                                style="background-color: gray;">Cancel</button>
+                            <div class="col-3"></div>
+                            <button class="col-3 btn btn-primary" style="background-color: #0C009C;">Send</button>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+    </div>
+
+    <script src="js/JQuery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var el = document.getElementById("wrapper");
+        var toggleButton = document.getElementById("menu-toggle");
+
+        toggleButton.onclick = function () {
+            el.classList.toggle("toggled");
+        };
+    </script>
+    <script src="js/common/utils.js"></script>
+    <script src="js/admin/student_info.js"></script>
+</body>
+
+</html>

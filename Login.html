@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script src="js/JQuery.js"></script>
+  <title>Login</title>
+</head>
+
+<body>
+  <section class="vh-100">
+    <div class="container-fluid py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="login_card card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <ul class="nav nav-pills nav-justified mb-3" id="loginForm" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-student-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-student" type="button" role="tab" aria-controls="pills-student"
+                    aria-selected="true">Login As Student</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-lib-tab" data-bs-toggle="pill" data-bs-target="#pills-lib"
+                    type="button" role="tab" aria-controls="pills-lib" aria-selected="false">Login As Librarian</button>
+                </li>
+              </ul>
+
+              <div class="tab-content">
+                <div class="tab-pane fade show active" id="pills-student" role="tabpanel"
+                  aria-labelledby="pills-student-tab">
+                  <form onsubmit="onSubmitLoginStudent(event)">
+
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="loginName" style="float: left;">Email</label>
+                      <input name="email" type="email" id="loginName" class="form-control" />
+                    </div>
+
+
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="loginPassword" style="float: left;">Password</label>
+                      <input name="password" type="password" id="loginPassword" class="form-control" />
+                    </div>
+
+
+                    <div class="d-flex justify-content-around align-items-center mb-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                        <label class="form-check-label" for="form1Example3"> Remember me </label>
+                      </div>
+                      <a href="index.html" style="text-decoration: none; color:black">Return Home</a>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary btn-block mb-4" style="background-color: #006A2D;;">
+                      Sign in</button>
+                  </form>
+                </div>
+
+                <div class="tab-pane fade" id="pills-lib" role="tabpanel" aria-labelledby="pills-lib-tab">
+
+                  <form onsubmit="onSubmitLoginLib(event)">
+
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="loginName" style="float: left;">Email</label>
+                      <input name="email" type="email" id="loginName" class="form-control" />
+                    </div>
+
+
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="loginPassword" style="float: left;">Password</label>
+                      <input name="password" type="password" id="loginPassword" class="form-control" />
+                    </div>
+
+
+                    <div class="d-flex justify-content-around align-items-center mb-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                        <label class="form-check-label" for="form1Example3"> Remember me </label>
+                      </div>
+                      <a href="index.html" style="text-decoration: none; color:black">Return Home</a>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary btn-block mb-4" style="background-color: #006A2D;;">
+                      Sign in</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="js/JQuery.js"></script>
+  <script src="script.js"></script>
+  <script src="js/common/utils.js"></script>
+  <script type="text/javascript" src="js/common/load_data.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/user/login.js"></script>
+</body>
+
+</html>

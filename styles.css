@@ -1,0 +1,318 @@
+
+
+header{
+  margin-bottom: 50px;
+}
+
+.hide {
+  display: none;
+}
+
+.dropdown{
+  position:relative;
+  display: inline-block;
+}
+
+.all_books:hover, .all_books:active{
+color: green!important;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: #f5f5f5;
+  z-index: 1;
+  list-style: none;
+  padding-left: 0;
+}
+
+
+.dropdown:hover .dropdown-content{
+  display: block;
+  width: 100%;
+}
+
+.dropdown-content a:hover {
+background-color: #006A2D;
+color: white;
+}
+
+.dropdown-content a{
+  color: black;
+  padding: 10px 10px;
+}
+
+.fa.fa-search{
+float: left;
+width: 20%;
+padding: 10px;
+background: #006A2D;
+color: white;
+font-size: 20px;
+border: 1px solid #006A2D;
+border-left: none;
+cursor: pointer;
+}
+
+.container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 50px;
+}
+.filter_btn{
+font-style: bold;
+padding: 0.7725em 1.5625em;
+  font-size: .8em;
+  font-weight: 700;
+  line-height: 2.0225;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: .05em;
+  background: var(--color_button_background);
+  color: var(--color_button_text);
+  border: 1px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  color: white;
+  position: relative;
+}
+
+.slider {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.slider .owl-item.active.center .card{
+  transform: scale(1.15);
+  opacity: 1;
+  color: black;
+}
+
+.owl-carousel .card {
+  background: #fff;
+  padding: 0px 0px;
+  margin: 50px 15px 90px 15px;
+  box-shadow: 0 15px 45px -20px rgb(0 0 0 / 73%);
+  transform: scale(0.9);
+  opacity: 0.5;
+  transition: all 0.3s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  position: relative;
+}
+
+.card .button{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+  overflow: hidden;
+}
+#categoryDropdown .button{
+  position: relative;
+  height: 50px;
+  width: 40%;
+  overflow: hidden;
+  font-style: bold;
+  padding: 0.7725em 1.5625em;
+  font-size: .8em;
+  font-weight: 700;
+  line-height: 2.0225;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: .05em;
+  border: 1px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.card .button .button-layer, #categoryDropdown .button .button_layer{
+  position: absolute;
+  height: 100%;
+  width: 300%;
+  left: -100%;
+  background-image: linear-gradient(135deg,#006A2D, green,green, green );
+  transition: all 0.4s ease;
+}
+
+
+.card .button:hover .button-layer, #categoryDropdown .button:hover .button_layer{
+  left: 0;
+}
+.card .button button{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+#categoryDropdown .button button{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+
+
+.card-img-overlay .card-title, .card-img-overlay .card-text{
+  color: white;
+}
+
+.card-body .card-title, .card-body .card-text{
+  color: black;
+}
+
+.owl-nav .owl-prev {
+  position: absolute;
+  top: calc(50% - 30px);
+  left: 0;
+  opacity: 1;
+  font-size: 80px !important;
+  z-index: 1;
+}
+.owl-nav .owl-next {
+  position: absolute;
+  top: calc(50% - 25px);
+  right: 0;
+  opacity: 1;
+  font-size: 80px !important;
+  z-index: 1;
+}
+
+
+.card-title, .card-text{
+  color: white;
+}
+
+footer{
+  margin-top: 50px;
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: #006A2D;
+  color: white;
+}
+
+.footer_text:hover, .footer_text:active, .book_title:hover {
+color: #006A2D!important;
+}
+#myBtn{
+border: none;
+background-color: white;
+
+}
+
+.owl-carousel{
+  margin-top: 50px;
+}
+
+.vh-100{
+  background-image: url("image/banner3.png");
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+
+.home{
+background-color: #f5f5f5;
+}
+
+
+.home .row .book-slider a img {
+  height: 25rem;
+}
+
+.home .row .book-slider a:hover img{
+  transform: scale(.9);
+}
+
+.home .row .book-slider .stand{
+  width: 100%;
+  margin-top: -1rem;
+}
+
+.modal-header{
+border-bottom: 0px!important;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+
+/* All Books Page */
+.text_over_img .container-fluid {
+position: relative;
+text-align: center;
+color: white;
+
+}
+.text_over_img .container-fluid img{
+height: 400px;
+object-fit: cover;
+filter: brightness(50%);
+}
+
+.centered {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.ratings{
+margin-right:10px;
+}
+
+.ratings i{
+
+color:#cecece;
+font-size:32px;
+}
+
+.rating-color{
+color:#fbc634 !important;
+}
+
+
+/* Reserved Page */
+#cart-title{
+font-size: 3.5rem;
+text-align: center;
+font-family: sans-serif;
+color: rgb(146, 78, 78);
+display: none;
+}
+
+
+
+/* Login Page */
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+background-color: #006A2D;
+}
+
+
+

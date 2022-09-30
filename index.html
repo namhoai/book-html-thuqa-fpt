@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+  <title>Home Page</title>
+</head>
+
+<body>
+  <!-- Header section starts -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand ms-lg-5 ps-lg-5 ms-md-4 ps-md-4" href="index.html">
+        <img src="image/logo.png" alt="Logo" width="160" height="50" class="d-inline-block align-text-top">
+
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navBar">
+        <ul class="navbar-nav me-lg-5 pe-lg-5  mb-2 mb-lg-0">
+          <li class="nav-item ">
+            <a class="all_books nav-link" href="AllBooks.html">All Books</a>
+          </li>
+          <li class="nav-item dropdown me-1 mb-lg-0 mb-2">
+            <select id="input-category" class="form-select  nav-link  ms-4  ps-2" aria-label="Categories"
+              style="border: 3px solid #006A2D;">
+              <option value="all">All categories</option>
+              <option value="Technology">Technology</option>
+              <option value="Psychology">Psychology</option>
+              <option value="Philosophy">Philosophy</option>
+              <option value="Business/Economic">Business/Economic</option>
+              <option value="Religion">Religion</option>
+              <option value="Business&Management">Business & Management</option>
+              <option value="Science">Science</option>
+              <option value="Guide">Guide</option>
+            </select>
+          </li>
+          <form class="search d-flex">
+            <input id="text-input-search" class="form-control me-2 ms-4" type="search" placeholder="Search"
+              aria-label="Search" style="border: 3px solid #006A2D;">
+            <button onclick="onSearchBook(event)" class="fa fa-search"></button>
+          </form>
+          <li class="nav-item dropdown ms-lg-5">
+            <a class="nav-link" id="AccountDropDown" style="color: #006A2D;">
+              My Account
+            </a>
+            <ul class="dropdown-content" aria-labelledby="AccountDropDown">
+              <li class="btn-logout"><a class="dropdown-item" href="Reserved.html">Reserved</a></li>
+              <li class="btn-login">
+                <hr class="dropdown-divider">
+              </li>
+              <li class="btn-login"><a class="dropdown-item" href="Login.html">Login</a></li>
+              <li class="btn-logout">
+                <hr class="dropdown-divider">
+              </li>
+              <li onclick="onClickLogout()" class="btn-logout"><a class="log_out dropdown-item">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Header section ends -->
+
+  <!-- Body section 1 starts -->
+
+  <section class="home container-fluid" id="home">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="content col-sm-3 ms-4 ps-4 me-5 mt-5 pt-5">
+        <h3 class="pt-5 mt-5 ">Library</h3>
+        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <a href="Login.html" class="filter_btn btn-login" style="background-color: #006A2D;">Login</a>
+      </div>
+
+
+      <div class="book-slider col-sm-7 mt-5 pt-4 text-center">
+        <div class="row justify-content-center mt-5 pt-5">
+          <a href="" class=" col-lg-4 col-sm-1 mb-2"><img src="image/bookcover2.png" alt="bookCover"></a>
+          <a href="" class="col-lg-4  col-sm-1"><img src="image/bookcover1.png" alt="bookCover"></a>
+        </div>
+        <img src="image/stand.png" class="stand" alt="bookStand">
+      </div>
+      <div class="col-1"></div>
+    </div>
+  </section>
+  <!-- Body section 1 ends -->
+
+  <!-- Body section 2 starts -->
+  <section id="slider" class="pt-5">
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div class="slider">
+            <div id="owl-carousel" class="owl-carousel">
+              <div class="card">
+                <img src="image/anh-nen-den-cho-dien-thoai.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay text-center">
+                  <h5 class="card-title" style="margin-top: 30%;">${category.name}</h5>
+                  <p class="card-text" style="margin-top: 20%;">${category.description}</p>
+                  <a href="" class="btn btn-primary btn-block  p-3 ps-4 pe-4"
+                    style="margin-top: 20%; background-color: #006A2D;">${category.name}</a>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/anh-nen-den-cho-dien-thoai.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay text-center">
+                  <h5 class="card-title" style="margin-top: 30%;">${category.name}</h5>
+                  <p class="card-text" style="margin-top: 20%;">${category.description}</p>
+                  <a href="" class="btn btn-primary btn-block  p-3 ps-4 pe-4"
+                    style="margin-top: 20%; background-color: #006A2D;">${category.name}</a>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/anh-nen-den-cho-dien-thoai.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay text-center">
+                  <h5 class="card-title" style="margin-top: 30%;">${category.name}</h5>
+                  <p class="card-text" style="margin-top: 20%;">${category.description}</p>
+                  <a href="" class="btn btn-primary btn-block  p-3 ps-4 pe-4"
+                    style="margin-top: 20%; background-color: #006A2D;">${category.name}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="slider" class="pt-5">
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
+          <div class="title">
+            <h2>NEW IN</h2>
+            <hr>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div class="slider">
+            <div class="owl-carousel">
+              <div class="card">
+                <img src="image/bookcover.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover1.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover1.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover1.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover2.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover2.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover1.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+  </section>
+
+  <section id="slider" class="pt-5">
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
+          <div class="title">
+            <h2>MOST BORROWED BOOKS</h2>
+            <hr>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div class="slider">
+            <div class="owl-carousel">
+              <div class="card">
+                <img src="image/bookcover1.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover1.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover2.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover2.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+  </section>
+
+  <section id="slider" class="pt-5">
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
+          <div class="title">
+            <h2>HIGHEST RATING BOOKS</h2>
+            <hr>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div class="slider">
+            <div class="owl-carousel">
+              <div class="card">
+                <img src="image/bookcover2.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover2.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover2.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover1.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover1.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="image/bookcover.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Book title</h5>
+                  <p class="card-text">Author</p>
+                  <div class="button">
+                    <div class="button-layer"></div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#reserve_Form">Reserve</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+  </section>
+
+  <!-- Footer starts -->
+  <footer class="text-center text-lg-start bg-light text-muted">
+    <div class="container-fluid text-center text-md-start mt-5">
+      <div class="row justify-content-center mt-3 pt-5">
+        <div class="col-1">
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h6 class="text-uppercase  mb-4">Opening hours: 9AM - 5PM</h6>
+          <h6 class="text-uppercase  mb-4">Hotline: 09102909310</h6>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h6><a href="AllBooks.html" class="footer_text text-uppercase fw-bold mb-4"
+              style="text-decoration: none; color:black">
+              All Books
+            </a></h6>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h6><a href="Reserved.html" class="footer_text text-uppercase fw-bold mb-4"
+              style="text-decoration: none; color:black">
+              All Reserved Book
+            </a></h6>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h6><a href="AboutUs.html" class="footer_text text-uppercase fw-bold mb-4"
+              style="text-decoration: none; color:black">
+              About Us
+            </a></h6>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h6><a href="FAQ.html" class="footer_text text-uppercase fw-bold mb-4"
+              style="text-decoration: none; color:black">
+              FAQ
+            </a></h6>
+        </div>
+        <div class="col-1">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="text-center p-4" style="background-color:black; color: white;">
+      © 2022 COCO University Bookstore. All right reserved
+      <br>
+    </div>
+  </footer>
+
+  <button type="button" class="btn btn-floating btn-lg" id="btn-back-to-top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+
+  <!-- Modal Section starts -->
+
+  <div class="modal fade" id="reserve_Form" tabindex="-1" aria-labelledby="reserveForm" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reserveForm">Reservation Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="BookTitle" class="col-form-label">Book Title</label>
+              <input type="text" class="form-control" id="BookTitle">
+            </div>
+            <div class="mb-3">
+              <label for="ISBN" class="col-form-label">ISBN</label>
+              <input type="number" class="form-control" id="ISBN">
+            </div>
+            <div class="mb-3">
+              <label for="StudentID" class="col-form-label">Student ID</label>
+              <input type="text" class="form-control" id="StudentID">
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#reserve_form1" data-bs-toggle="modal" data-bs-dismiss="modal"
+            style="background-color: #006A2D;">Check Avaibilty</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="reserve_form1" tabindex="-1" aria-labelledby="reserveForm" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <h2 class="modal-title text-center" id="reserveForm">Reservation Form</h2>
+          <button type="button" class="btn-close me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <p>Date Reserve</p>
+            <div class="mb-3">
+              <label for="from-date" class="col-form-label">From</label>
+              <input type="date" class="form-control" id="from-date">
+            </div>
+            <div class="mb-3">
+              <label for="to-date" class="col-form-label">To</label>
+              <input type="date" class="form-control" id="recipient-to-date">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-target="#alert_reserve" data-bs-toggle="modal"
+            data-bs-dismiss="modal" style="background-color: #006A2D;">Reserve Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="alert_reserve" tabindex="-1" aria-labelledby="alert_reserve" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reserveForm"></h5>
+          <button type="button" class="btn-close me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>You have Succesfully reserved the book</h2>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+            style="background-color: #006A2D;">Return Home</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="alert_reserve" tabindex="-1" aria-labelledby="alert_reserve" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reserveForm"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>Unfortunately you will have to wait</h2>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #006A2D;">Get
+            in queue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="alert_reserve" tabindex="-1" aria-labelledby="alert_reserve" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reserveForm"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>WE will send you a notice if your book is available</h2>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Return Home</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Section Ends -->
+
+  <!-- Footer ends -->
+  <script type="text/javascript" src="js/common/utils.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script src="js/JQuery.js"></script>
+
+  <script src="js/common/utils.js"></script>
+  <script src="js/common/load_data.js"></script>
+  <script src="js/data/categories.js"></script>
+  <script src="js/user/header.js"></script>
+  <script src="js/user/index.js"></script>
+
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
